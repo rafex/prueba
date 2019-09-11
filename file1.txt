@@ -23,6 +23,7 @@ Test
 >>>>>>> 01f891a41bc0896f1f7cbed7243c7ecc1dbbeb08
 nuevo archivo
 
+practica
 
 Cambiado
 <<<<<<< HEAD

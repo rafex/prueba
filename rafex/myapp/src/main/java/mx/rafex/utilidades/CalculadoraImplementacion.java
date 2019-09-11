@@ -3,7 +3,7 @@ package mx.rafex.utilidades;
 public class CalculadoraImplementacion implements Calculadora {
 
 	public int suma(final int valorUno, final int valorDos) {
-		// TODO Auto-generated method stub
+		int Resultado = valorUno + valorDos;
 		return 0;
 	}
 

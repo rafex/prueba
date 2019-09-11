@@ -1,5 +1,5 @@
-<<<<<<< HEAD
+
 hola soy diego
 =======
-Agregando Texto
+M�s texto
 >>>>>>> a3e7be332b94625540e460329667b5fcdb24cd55

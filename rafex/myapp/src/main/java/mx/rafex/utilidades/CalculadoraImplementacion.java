@@ -24,8 +24,9 @@ public class CalculadoraImplementacion implements Calculadora {
 	}
 
 	public int raizCuadrada(final int numero) {
-		// TODO Auto-generated method stub
-		return 0;
+
+		int resultado = (int) Math.sqrt(numero);
+		return resultado;
 	}
 
 	public int potencia(final int numero, final int exponente) {

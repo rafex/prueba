@@ -1,5 +1,7 @@
 package mx.rafex.myapp;
 
+import org.apache.commons.lang3.ArrayUtils;
+
 import mx.rafex.utilidades.Calculadora;
 import mx.rafex.utilidades.CalculadoraImplementacion;
 
@@ -10,6 +12,11 @@ import mx.rafex.utilidades.CalculadoraImplementacion;
 public class App {
 
     public static void main(final String[] args) {
+
+        if (ArrayUtils.isEmpty(args)) {
+            System.out.println("Adios, no tengo argumentos...");
+            System.exit(0);
+        }
 
         final Calculadora objetoCalculadora = new CalculadoraImplementacion();
 

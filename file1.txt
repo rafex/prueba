@@ -1,22 +1,7 @@
-<<<<<<< HEAD
-Test
-===0======
-practica
-=======
-<<<<<<< HEAD
-Test
-=======
+
 nuevo archivo
-practica
->>>>>>> f5f4c008e8e3484a318a3c67eb3d5e20fa36c413
 
 
 Cambiado
->>>>>>> d01f49d614ea996902f5aa5b5d833eb8e8f4107f
-=======
-nuevo archivo
-Test
-Cambiado
-File_1
+
 Hola a todos
->>>>>>> 0e6402bd46cea70ab3dd06e8e7b2c02073eb2f7f

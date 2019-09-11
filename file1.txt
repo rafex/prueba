@@ -1,7 +1,18 @@
 nuevo archivo
+<<<<<<< HEAD
+=======
+
+Test
+
+Cambiado
+>>>>>>> 92d2b56093f179bf84ff30003f0ee4d5693becf2
 
 Test
 
 Cambiado
 
+<<<<<<< HEAD
 File_1
+=======
+Hola a todos
+>>>>>>> 92d2b56093f179bf84ff30003f0ee4d5693becf2

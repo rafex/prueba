@@ -18,8 +18,9 @@ public class CalculadoraImplementacion implements Calculadora {
 	}
 
 	public int division(final int valorUno, final int valorDos) {
-		// TODO Auto-generated method stub
-		return 0;
+		int Resultado = 0;
+		Resultado = valorUno / valorDos;
+		return Resultado;
 	}
 
 	public int raizCuadrada(final int numero) {

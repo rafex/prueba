@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 hola soy diego
 =======
@@ -6,11 +7,23 @@ Test
 =======
 =======
 >>>>>>> ea01e383681d5e64b007821040437eb82b45cbfd
-nuevo archivo
-
+=======
+<<<<<<< HEAD
 Test
+===0======
+practica
+=======
+<<<<<<< HEAD
+Test
+=======
+>>>>>>> 26bb98ce4ede9bb86eb4652c8d5e01a9b077e572
+nuevo archivo
+practica
+>>>>>>> f5f4c008e8e3484a318a3c67eb3d5e20fa36c413
+
 
 Cambiado
+<<<<<<< HEAD
 
 
 <<<<<<< HEAD
@@ -19,3 +32,13 @@ Cambiado
 =======
 Hola a todos
 >>>>>>> ea01e383681d5e64b007821040437eb82b45cbfd
+=======
+>>>>>>> d01f49d614ea996902f5aa5b5d833eb8e8f4107f
+=======
+nuevo archivo
+Test
+Cambiado
+File_1
+Hola a todos
+>>>>>>> 0e6402bd46cea70ab3dd06e8e7b2c02073eb2f7f
+>>>>>>> 26bb98ce4ede9bb86eb4652c8d5e01a9b077e572

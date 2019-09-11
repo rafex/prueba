@@ -19,9 +19,9 @@ public class CalculadoraImplementacion implements Calculadora {
     }
 
     public int potencia(final int numero, final int exponente) {
-        int result;
-        result = (int) Math.pow(numero, exponente);
-        return result;
+        int r;
+        r = (int) Math.pow(numero, exponente);
+        return r;
     }
 
     public int multiplicacion(final int valorUno, final int valorDos) {

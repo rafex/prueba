@@ -2,6 +2,13 @@ holadenuevo
 Test
 practica
 nuevo archivo
+<<<<<<< HEAD
+test
+practica
 Cambiado
+file1
+=======
+Cambiado
+>>>>>>> 61ea121ac911e06d8138a62cdfcde51e73cabdd8
 Hola a todos
 File_1

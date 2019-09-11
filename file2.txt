@@ -1,5 +1,4 @@
-<<<<<<< HEAD
+
 Hola otra vez!!
-=======
+
 Hola
->>>>>>> ea4754f5568b458d780a29b14ca60d34df59affa

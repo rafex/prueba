@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Test
+=======
+nuevo archivo
+>>>>>>> f5f4c008e8e3484a318a3c67eb3d5e20fa36c413

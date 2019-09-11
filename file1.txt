@@ -1,6 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
-hola soy diego
+holadenuevo
 =======
 <<<<<<< HEAD
 Test
@@ -17,12 +18,14 @@ practica
 Test
 =======
 >>>>>>> 26bb98ce4ede9bb86eb4652c8d5e01a9b077e572
+=======
+
+>>>>>>> 01f891a41bc0896f1f7cbed7243c7ecc1dbbeb08
 nuevo archivo
-practica
->>>>>>> f5f4c008e8e3484a318a3c67eb3d5e20fa36c413
 
 
 Cambiado
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
@@ -42,3 +45,7 @@ File_1
 Hola a todos
 >>>>>>> 0e6402bd46cea70ab3dd06e8e7b2c02073eb2f7f
 >>>>>>> 26bb98ce4ede9bb86eb4652c8d5e01a9b077e572
+=======
+
+Hola a todos
+>>>>>>> 01f891a41bc0896f1f7cbed7243c7ecc1dbbeb08

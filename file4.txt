@@ -1,5 +1,9 @@
-<<<<<<< HEAD
-hola soy diego
-=======
+
+
 Agregando Texto
->>>>>>> a3e7be332b94625540e460329667b5fcdb24cd55
+
+
+file 4 -- Angeles
+
+hola soy diego
+Agregando Texto

@@ -1,5 +1,10 @@
 
-hola soy diego
-=======
+
+
 M�s texto
->>>>>>> a3e7be332b94625540e460329667b5fcdb24cd55
+
+
+file 5 -- Angeles
+
+hola soy diego
+M�s texto

@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-Archivo1
+modificacion1
 =======
 <<<<<<< HEAD
 Test

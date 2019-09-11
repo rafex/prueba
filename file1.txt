@@ -1,7 +1,7 @@
 
 nuevo archivo
-
-
+test
+practica
 Cambiado
-
+file1
 Hola a todos

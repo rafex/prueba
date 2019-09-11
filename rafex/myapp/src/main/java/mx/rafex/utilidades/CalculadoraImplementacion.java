@@ -3,10 +3,14 @@ package mx.rafex.utilidades;
 public class CalculadoraImplementacion implements Calculadora {
 
 	public int suma(final int valorUno, final int valorDos) {
+<<<<<<< HEAD
 
 		int Resultado = valorUno + valorDos;
 		// TODO Auto-generated method stub
 
+=======
+		int Resultado = valorUno + valorDos;
+>>>>>>> 3151c12e191d3b0a2538c1caee0884b9b318a16b
 		return 0;
 	}
 
@@ -20,7 +24,7 @@ public class CalculadoraImplementacion implements Calculadora {
 	public int multiplicacion(final int valorUno, final int valorDos) {
 		int Resultado = valorUno * valorDos;
 		// TODO Auto-generated method stub
-		return 0;
+		return Resultado;
 
 	}
 

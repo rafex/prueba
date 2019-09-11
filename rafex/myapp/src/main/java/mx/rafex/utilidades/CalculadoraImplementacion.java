@@ -28,8 +28,9 @@ public class CalculadoraImplementacion implements Calculadora {
 	}
 
 	public int potencia(final int numero, final int exponente) {
-		// TODO Auto-generated method stub
-		return 0;
+		int result;
+		result = (int) Math.pow(numero, exponente);
+		return result;
 	}
 
 	public void enviarSaludo(final String nombre) {

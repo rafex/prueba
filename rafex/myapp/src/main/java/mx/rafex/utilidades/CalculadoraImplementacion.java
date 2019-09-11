@@ -19,9 +19,9 @@ public class CalculadoraImplementacion implements Calculadora {
     }
 
     public int potencia(final int numero, final int exponente) {
-        int r;
-        r = (int) Math.pow(numero, exponente);
-        return r;
+        int resultado;
+        resultado = (int) Math.pow(numero, exponente);
+        return resultado;
     }
 
     public int multiplicacion(final int valorUno, final int valorDos) {
@@ -38,5 +38,4 @@ public class CalculadoraImplementacion implements Calculadora {
     public void enviarSaludo(final String nombre) {
         System.out.println("Un saludos para: " + nombre);
     }
-
 }

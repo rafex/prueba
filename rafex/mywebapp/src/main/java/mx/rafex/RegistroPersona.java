@@ -2,6 +2,8 @@ package mx.rafex;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,10 +11,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/formulario")
-public class Formulario extends HttpServlet {
+@WebServlet("/registroPersonas")
+public class RegistroPersona extends HttpServlet {
 
     private static final long serialVersionUID = 5436699406890556670L;
+    private static final List<Persona> listaPersonas = new ArrayList<>();
 
     @Override
     public void init() throws ServletException {
@@ -28,23 +31,21 @@ public class Formulario extends HttpServlet {
     public void doGet(final HttpServletRequest request, final HttpServletResponse response)
             throws ServletException, IOException {
         PrintWriter out;
-        final String title = "Simple Servlet Output";
+        final String title = "Listado personas";
 
-        System.out.println(request.getQueryString());
-
-        final String nombre = request.getParameter("nombre");
-        final String apellidoPaterno = request.getParameter("apellidoPaterno");
-
-        // primero selecciona el tipo de contenidos y otros campos de cabecera de la
-        // respuesta
         response.setContentType("text/html");
-        // Luego escribe los datos de la respuesta
         out = response.getWriter();
         out.println("<HTML><HEAD><TITLE>");
         out.println(title);
         out.println("</TITLE></HEAD><BODY>");
         out.println("<H1>" + title + "</H1>");
-        out.println("<P>This is output from SimpleServlet. " + nombre + " " + apellidoPaterno);
+        out.println("<ul>");
+        for (final Persona persona : listaPersonas) {
+            out.println("</li>");
+            out.println(persona.toString());
+            out.println("</li>");
+        }
+        out.println("</ul>");
         out.println("</BODY></HTML>");
         out.close();
     }
@@ -61,15 +62,13 @@ public class Formulario extends HttpServlet {
             edad = Integer.parseInt(request.getParameter("edad"));
         }
 
+        listaPersonas.add(new Persona(nombre, apellidoPaterno, apellidoMaterno, edad));
+
         PrintWriter out;
         response.setContentType("application/json");
         out = response.getWriter();
-        out.println(
-                "{\n" + "  \"nombre\": \"" + nombre + "\",\n" + "  \"apellidoPaterno\": \"" + apellidoPaterno + "\",\n"
-                        + "  \"apellidoMaterno\": \"" + apellidoMaterno + "\",\n" + "  \"edad\": \"" + edad + "\",\n" +
-
-                        "  \"direccion\": {\n" + "    \"calle\": \"juan escutia\",\n" + "    \"numero\": \"43\"\n"
-                        + "  }\n" + "}");
+        out.println("{\n" + "  \"nombre\": \"" + nombre + "\",\n" + "  \"apellidoPaterno\": \"" + apellidoPaterno
+                + "\",\n" + "  \"apellidoMaterno\": \"" + apellidoMaterno + "\",\n" + "  \"edad\": \"" + edad + "\"}");
 
         out.close();
 

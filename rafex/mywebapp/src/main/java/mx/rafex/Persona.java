@@ -6,6 +6,7 @@ public class Persona implements Serializable {
 
     private static final long serialVersionUID = 7893533112005302192L;
 
+    private Integer identificador;
     private String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
@@ -15,13 +16,21 @@ public class Persona implements Serializable {
 
     }
 
-    public Persona(final String nombre, final String apellidoPaterno, final String apellidoMaterno,
-            final Integer edad) {
+    public Persona(final String nombre, final String apellidoPaterno, final String apellidoMaterno, final Integer edad,
+            final Integer identificador) {
         super();
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
         this.apellidoMaterno = apellidoMaterno;
         this.edad = edad;
+    }
+
+    public Integer getIdentificador() {
+        return this.identificador;
+    }
+
+    public void setIdentificador(final Integer identificador) {
+        this.identificador = identificador;
     }
 
     public String getNombre() {
@@ -58,8 +67,8 @@ public class Persona implements Serializable {
 
     @Override
     public String toString() {
-        return "Personas [nombre=" + this.nombre + ", apellidoPaterno=" + this.apellidoPaterno + ", apellidoMaterno="
-                + this.apellidoMaterno + ", edad=" + this.edad + "]";
+        return "Persona [identificador=" + this.identificador + ", nombre=" + this.nombre + ", apellidoPaterno="
+                + this.apellidoPaterno + ", apellidoMaterno=" + this.apellidoMaterno + ", edad=" + this.edad + "]";
     }
 
 }

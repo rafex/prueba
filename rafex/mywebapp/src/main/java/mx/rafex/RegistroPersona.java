@@ -2,8 +2,8 @@ package mx.rafex;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Iterator;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 public class RegistroPersona extends HttpServlet {
 
     private static final long serialVersionUID = 5436699406890556670L;
-    private static final List<Persona> listaPersonas = new ArrayList<>();
+    private static final HashSet<Persona> listaPersonas = new HashSet<>();
+    private static Integer contador = 0;
 
     @Override
     public void init() throws ServletException {
@@ -41,12 +42,12 @@ public class RegistroPersona extends HttpServlet {
         out.println("<H1>" + title + "</H1>");
         out.println("<ol type=\"A\">");
 
-        for (int i = 0; i < listaPersonas.size(); i++) {
+        for (final Iterator<Persona> iterator = listaPersonas.iterator(); iterator.hasNext();) {
             out.println("<li>");
-            out.println("Identificador: " + (i + 1) + " ");
-            out.println(listaPersonas.get(i).toString());
+            out.println(iterator.next().toString());
             out.println("</li>");
         }
+
         out.println("</ol>");
         out.println("</BODY></HTML>");
         out.close();
@@ -64,7 +65,16 @@ public class RegistroPersona extends HttpServlet {
             edad = Integer.parseInt(request.getParameter("edad"));
         }
 
-        listaPersonas.add(new Persona(nombre, apellidoPaterno, apellidoMaterno, edad));
+//        Persona persona = new Persona();
+//        for (final Iterator<Persona> iterator = listaPersonas.iterator(); iterator.hasNext();) {
+//            persona = iterator.next();
+//            if (persona.getIdentificador() == identificador) {
+//                listaPersonas.remove(persona);
+//                break;
+//            }
+//        }
+
+        listaPersonas.add(new Persona(nombre, apellidoPaterno, apellidoMaterno, edad, contador++));
 
         final String title = "Registro exitoso";
         PrintWriter out;
@@ -93,9 +103,14 @@ public class RegistroPersona extends HttpServlet {
         }
         final Integer identificador = Integer.valueOf(request.getParameter("identificador"));
 
-        final Persona persona = listaPersonas.get(identificador - 1);
-
-        listaPersonas.remove(persona);
+        Persona persona = new Persona();
+        for (final Iterator<Persona> iterator = listaPersonas.iterator(); iterator.hasNext();) {
+            persona = iterator.next();
+            if (persona.getIdentificador() == identificador) {
+                listaPersonas.remove(persona);
+                break;
+            }
+        }
 
         if ((nombre != null) && !nombre.isEmpty()) {
             persona.setNombre(nombre);
@@ -141,9 +156,14 @@ public class RegistroPersona extends HttpServlet {
 
         final Integer identificador = Integer.valueOf(request.getParameter("identificador"));
 
-        final Persona persona = listaPersonas.get(identificador - 1);
-
-        listaPersonas.remove(persona);
+        Persona persona = new Persona();
+        for (final Iterator<Persona> iterator = listaPersonas.iterator(); iterator.hasNext();) {
+            persona = iterator.next();
+            if (persona.getIdentificador() == identificador) {
+                listaPersonas.remove(persona);
+                break;
+            }
+        }
 
         final String title = "Eliminacion exitosa";
         PrintWriter out;

@@ -16,6 +16,6 @@ hs_err_pid*
 .classpath
 .settings/
 
-
+.DS_Store
 
 

@@ -33,19 +33,21 @@ public class RegistroPersona extends HttpServlet {
         PrintWriter out;
         final String title = "Listado personas";
 
-        response.setContentType("text/html");
+        response.setContentType("text/html;charset=UTF-8");
         out = response.getWriter();
         out.println("<HTML><HEAD><TITLE>");
         out.println(title);
         out.println("</TITLE></HEAD><BODY>");
         out.println("<H1>" + title + "</H1>");
-        out.println("<ul>");
-        for (final Persona persona : listaPersonas) {
-            out.println("</li>");
-            out.println(persona.toString());
+        out.println("<ol type=\"A\">");
+
+        for (int i = 0; i < listaPersonas.size(); i++) {
+            out.println("<li>");
+            out.println("Identificador: " + (i + 1) + " ");
+            out.println(listaPersonas.get(i).toString());
             out.println("</li>");
         }
-        out.println("</ul>");
+        out.println("</ol>");
         out.println("</BODY></HTML>");
         out.close();
     }
@@ -64,12 +66,16 @@ public class RegistroPersona extends HttpServlet {
 
         listaPersonas.add(new Persona(nombre, apellidoPaterno, apellidoMaterno, edad));
 
+        final String title = "Registro exitoso";
         PrintWriter out;
-        response.setContentType("application/json");
+        response.setContentType("text/html;charset=UTF-8");
         out = response.getWriter();
-        out.println("{\n" + "  \"nombre\": \"" + nombre + "\",\n" + "  \"apellidoPaterno\": \"" + apellidoPaterno
-                + "\",\n" + "  \"apellidoMaterno\": \"" + apellidoMaterno + "\",\n" + "  \"edad\": \"" + edad + "\"}");
-
+        out.println("<HTML><HEAD><TITLE>");
+        out.println(title);
+        out.println("</TITLE></HEAD><BODY>");
+        out.println("<H1>" + title + "</H1>");
+        out.println("<p> Identificador de registro:" + listaPersonas.size() + "</p>");
+        out.println("</BODY></HTML>");
         out.close();
 
     }
@@ -77,6 +83,49 @@ public class RegistroPersona extends HttpServlet {
     @Override
     public void doPut(final HttpServletRequest request, final HttpServletResponse response)
             throws ServletException, IOException {
+
+        final String nombre = request.getParameter("nombre");
+        final String apellidoPaterno = request.getParameter("apellidoPaterno");
+        final String apellidoMaterno = request.getParameter("apellidoMaterno");
+        int edad = 0;
+        if ((request.getParameter("edad") != null) && !request.getParameter("edad").isEmpty()) {
+            edad = Integer.parseInt(request.getParameter("edad"));
+        }
+        final Integer identificador = Integer.valueOf(request.getParameter("identificador"));
+
+        final Persona persona = listaPersonas.get(identificador - 1);
+
+        listaPersonas.remove(persona);
+
+        if ((nombre != null) && !nombre.isEmpty()) {
+            persona.setNombre(nombre);
+        }
+
+        if ((apellidoPaterno != null) && !apellidoPaterno.isEmpty()) {
+            persona.setApellidoPaterno(apellidoPaterno);
+        }
+
+        if ((apellidoMaterno != null) && !apellidoMaterno.isEmpty()) {
+            persona.setApellidoMaterno(apellidoMaterno);
+        }
+
+        if (edad != 0) {
+            persona.setEdad(edad);
+        }
+
+        listaPersonas.add(persona);
+
+        final String title = "Modificación exitosa";
+        PrintWriter out;
+        response.setContentType("text/html;charset=UTF-8");
+        out = response.getWriter();
+        out.println("<HTML><HEAD><TITLE>");
+        out.println(title);
+        out.println("</TITLE></HEAD><BODY>");
+        out.println("<H1>" + title + "</H1>");
+        out.println("<p> Modificación:" + persona.toString() + "</p>");
+        out.println("</BODY></HTML>");
+        out.close();
 
     }
 
@@ -89,6 +138,24 @@ public class RegistroPersona extends HttpServlet {
     @Override
     public void doDelete(final HttpServletRequest request, final HttpServletResponse response)
             throws ServletException, IOException {
+
+        final Integer identificador = Integer.valueOf(request.getParameter("identificador"));
+
+        final Persona persona = listaPersonas.get(identificador - 1);
+
+        listaPersonas.remove(persona);
+
+        final String title = "Eliminacion exitosa";
+        PrintWriter out;
+        response.setContentType("text/html;charset=UTF-8");
+        out = response.getWriter();
+        out.println("<HTML><HEAD><TITLE>");
+        out.println(title);
+        out.println("</TITLE></HEAD><BODY>");
+        out.println("<H1>" + title + "</H1>");
+        out.println("<p>" + persona.toString() + "</p>");
+        out.println("</BODY></HTML>");
+        out.close();
 
     }
 
